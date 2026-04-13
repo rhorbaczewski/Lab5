@@ -1,10 +1,11 @@
-Laboratorium 6 PAwChO
+# Laboratorium 6 PAwChO
 
 Robert Horbaczewski
 
 Dockerfile wykorzystujący metodę wieloetapowego budowania obrazów.
 
 Dockerfile:
+'''
 # STAGE 1
 
 # Budowa obrazu from scratch
@@ -51,9 +52,10 @@ HEALTHCHECK --interval=10s --timeout=2s \
 
 # Domyslne polecenie przy starcie kontenera
 CMD sh -c "sh /create_html.sh && httpd -f -p 80 -h /www"
+'''
 
 
-Budowa obrazu:
+# Budowa obrazu:
 (base) roberthorbaczewski@MacBook-Air-M2-Robert Lab5 % docker build -t web777 --build-arg VERSION=1.0 .
 [+] Building 1.6s (11/11) FINISHED                                                              docker:desktop-linux
  => [internal] load build definition from Dockerfile                                                            0.0s
@@ -88,7 +90,7 @@ View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux
 
 
 
-Uruchomienie serwera, sprawdzenie funkcjonowania aplikacji:
+# Uruchomienie serwera, sprawdzenie funkcjonowania aplikacji:
 (base) roberthorbaczewski@MacBook-Air-M2-Robert Lab5 % docker run -d -p 8080:80 --name web777_test web777  
 4658f468fe5f84130854c1f26c9a62969b2d14658ed59f7ed13113d06deea5e6
 (base) roberthorbaczewski@MacBook-Air-M2-Robert Lab5 % docker ps
@@ -97,5 +99,5 @@ CONTAINER ID   IMAGE     COMMAND                   CREATED          STATUS      
 
 
 
-Zrzut ekranu potwierdzający, że aplikacja realizuje wymaganą funkcjonalność:
+# Zrzut ekranu potwierdzający, że aplikacja realizuje wymaganą funkcjonalność:
 ![Screenshot](zrzutEkranu.png)
