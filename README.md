@@ -1,4 +1,4 @@
-# Laboratorium 6 PAwChO
+# Laboratorium 5 PAwChO
 
 Robert Horbaczewski
 
