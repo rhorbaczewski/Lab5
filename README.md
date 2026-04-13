@@ -56,6 +56,7 @@ CMD sh -c "sh /create_html.sh && httpd -f -p 80 -h /www"
 
 
 # Budowa obrazu:
+```
 (base) roberthorbaczewski@MacBook-Air-M2-Robert Lab5 % docker build -t web777 --build-arg VERSION=1.0 .
 [+] Building 1.6s (11/11) FINISHED                                                              docker:desktop-linux
  => [internal] load build definition from Dockerfile                                                            0.0s
@@ -87,15 +88,18 @@ CMD sh -c "sh /create_html.sh && httpd -f -p 80 -h /www"
  - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 46)
 
 View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/y809bzlrljthg817qkugbr6dt
+```
 
 
 
 # Uruchomienie serwera, sprawdzenie funkcjonowania aplikacji:
+```
 (base) roberthorbaczewski@MacBook-Air-M2-Robert Lab5 % docker run -d -p 8080:80 --name web777_test web777  
 4658f468fe5f84130854c1f26c9a62969b2d14658ed59f7ed13113d06deea5e6
 (base) roberthorbaczewski@MacBook-Air-M2-Robert Lab5 % docker ps
 CONTAINER ID   IMAGE     COMMAND                   CREATED          STATUS                    PORTS                                     NAMES
 4658f468fe5f   web777    "/bin/sh -c 'sh -c \"…"   57 seconds ago   Up 56 seconds (healthy)   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   web777_test
+```
 
 
 
