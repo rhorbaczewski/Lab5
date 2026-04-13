@@ -5,7 +5,7 @@ Robert Horbaczewski
 Dockerfile wykorzystujący metodę wieloetapowego budowania obrazów.
 
 Dockerfile:
-'''
+```
 # STAGE 1
 
 # Budowa obrazu from scratch
@@ -52,7 +52,7 @@ HEALTHCHECK --interval=10s --timeout=2s \
 
 # Domyslne polecenie przy starcie kontenera
 CMD sh -c "sh /create_html.sh && httpd -f -p 80 -h /www"
-'''
+```
 
 
 # Budowa obrazu:
